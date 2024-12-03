@@ -1,11 +1,21 @@
 import React from 'react';
+import store from './redux/store';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-export default function App() {
-  
+import Login from './features/Auth/componentLogin/Login';
+import Register from './features/Auth/componentRegister/Register';
+
+export default function App ()  {
   return (
-    <div>
-
-    </div>
+    <Provider store={store}>
+      <Router>
+        <Routes>
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </Router>
+    </Provider>
   );
 };
 
