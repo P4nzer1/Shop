@@ -1,17 +1,19 @@
 import { configureStore } from '@reduxjs/toolkit';
-// Импортируйте ваши редюсеры здесь
+import createSagaMiddleware from 'redux-saga';
+
 import authReducer from '../features/Auth/authSlice';
+import { authSaga } from '../features/Auth/authSaga';
 
-
+const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
   reducer: {
-    auth: authReducer, // Редюсер для управления авторизацией
-     // Редюсер для управления корзиной
+    auth: authReducer,
   },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({ thunk: false }).concat(sagaMiddleware),
 });
 
-// Экспортируем тип корневого состояния и dispatch
+sagaMiddleware.run(authSaga);
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

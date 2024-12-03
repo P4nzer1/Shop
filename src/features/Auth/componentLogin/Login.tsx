@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../redux/store';
-import { loginRequest } from './authSlice';
+import { RootState } from '../../../redux/store';
+import { loginRequest } from '../authSlice';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -12,8 +12,9 @@ const Login = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    dispatch(loginRequest({ email, password }));
+    dispatch(loginRequest({ email, password })); // Передаётся { email, password }
   };
+  
 
   return (
     <form onSubmit={handleSubmit}>
