@@ -3,6 +3,11 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import LineChart from '../../components/Charts/LineChart';
 import { useData } from '../../hooks/useData';
+import { ButtonPrimary, ButtonSecondary, IconButton } from '../../ui-kit/components/ui/Buttons';
+
+
+
+
 
 
 const HomePage: React.FC = () => {
