@@ -1,23 +1,37 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
-import CartItem from '../../entities/Cart/ui/CartItem';
-import CartTotal from '../../entities/Cart/ui/CartTotal';
+import { CartTotal, CartItem } from '../../entities/Cart/ui';
+import styles from './CartPage.module.scss';
+
+interface CartItem {
+  id: string;
+  name: string;
+  price: number;
+  quantity: number;
+}
+
+interface CartState {
+  items: CartItem[];
+}
+
+interface RootState {
+  cart: CartState;
+}
 
 const CartPage = () => {
-  const cartItems = useSelector((state: any) => state.cart.items);
+  const cartItems = useSelector((state: RootState) => state.cart.items);
 
   return (
-    <div>
+    <div className={styles.cartPage}>
       <h1>Ваша корзина</h1>
-      {cartItems.length === 0 ? (
-        <p>Ваша корзина пуста</p>
-      ) : (
+      {cartItems && cartItems.length > 0 ? (
         <div>
-          {cartItems.map((item: any) => (
+          {cartItems.map((item) => (
             <CartItem key={item.id} {...item} />
           ))}
           <CartTotal />
         </div>
+      ) : (
+        <p>Ваша корзина пуста</p>
       )}
     </div>
   );
