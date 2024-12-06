@@ -1,18 +1,14 @@
+@import '../../shared/styles/global';
 .header {
-    position: relative; /* Для позиционирования внутреннего контента */
-    background-color: #000000; 
-    background-size: cover; /* Картинка полностью покрывает контейнер */
-    background-position: center; /* Центрирование изображения */
-    background-repeat: no-repeat; /* Убираем повторение */
-    width: 100%; /* На всю ширину экрана */
-    height: 100px; /* Задайте желаемую высоту */
-    display: flex; /* Flexbox для удобного позиционирования содержимого */
-    align-items: center; /* Вертикальное выравнивание */
-    justify-content: center; /* Горизонтальное выравнивание */
-    color: #000000; /* Белый цвет текста для контраста */
-    text-align: center; /* Центрирование текста */
-}
-
+    height: 100px;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10rem; // Отступ снизу для разделения с Main
+  }
+  
 .content {
     z-index: 1; /* Поверх фонового изображения */
 }
