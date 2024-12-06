@@ -1,0 +1,19 @@
+.buttonIcon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+  }
+  
+  .iconButton:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .iconButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  

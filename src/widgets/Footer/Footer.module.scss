@@ -1,0 +1,32 @@
+.footer {
+    position: relative; /* Для позиционирования внутреннего контента */
+    background-image: url('../../assets/image/footer.jpg'); 
+    background-size: cover; /* Картинка полностью покрывает контейнер */
+    background-position: center; /* Центрирование изображения */
+    background-repeat: no-repeat; /* Убираем повторение */
+    width: 100%; /* На всю ширину экрана */
+    height: 700px; /* Задайте желаемую высоту */
+    display: flex; /* Flexbox для удобного позиционирования содержимого */
+    align-items: center; /* Вертикальное выравнивание */
+    justify-content: center; /* Горизонтальное выравнивание */
+    color: #000000; /* Белый цвет текста для контраста */
+    text-align: center; /* Центрирование текста */
+}
+
+.content {
+    z-index: 1; /* Поверх фонового изображения */
+}
+
+.a {
+    display: flex; /* Flexbox для удобного позиционирования содержимого */
+    align-items: baseline; /* Вертикальное выравнивание */
+    justify-content: center; /* Горизонтальное выравнивание */
+    font-size: 16px;
+    background-color: #000000;
+    color: #fff;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #462c2c;
+    }
+}
