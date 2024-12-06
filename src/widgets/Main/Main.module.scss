@@ -1,0 +1,16 @@
+@import '../../shared/styles/global';
+
+.conteiner {
+    flex: 1; // Мейн растягивается на всё доступное пространство
+    margin-bottom: 10rem; // Внутренние отступы для контента
+  
+    // Адаптивность через медиазапросы
+    @media (max-width: 768px) {
+      padding: 1.5rem;
+    }
+  
+    @media (max-width: 480px) {
+      padding: 1rem;
+    }
+  }
+  

@@ -1,32 +1,44 @@
+@import '../../shared/styles/global'; /* Импорт глобального файла */
+
 .footer {
-    position: relative; /* Для позиционирования внутреннего контента */
-    background-image: url('../../assets/image/footer.jpg'); 
-    background-size: cover; /* Картинка полностью покрывает контейнер */
-    background-position: center; /* Центрирование изображения */
-    background-repeat: no-repeat; /* Убираем повторение */
-    width: 100%; /* На всю ширину экрана */
-    height: 700px; /* Задайте желаемую высоту */
-    display: flex; /* Flexbox для удобного позиционирования содержимого */
-    align-items: center; /* Вертикальное выравнивание */
-    justify-content: center; /* Горизонтальное выравнивание */
-    color: #000000; /* Белый цвет текста для контраста */
-    text-align: center; /* Центрирование текста */
-}
+  position: static;
+  height: 100vh; // Фиксированная высота для Footer
+  background-image: url('../../assets/image/footer.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
 
-.content {
-    z-index: 1; /* Поверх фонового изображения */
-}
+  transition: height 0.3s ease; // Плавный переход для высоты
 
-.a {
-    display: flex; /* Flexbox для удобного позиционирования содержимого */
-    align-items: baseline; /* Вертикальное выравнивание */
-    justify-content: center; /* Горизонтальное выравнивание */
-    font-size: 16px;
-    background-color: #000000;
-    color: #fff;
-    cursor: pointer;
+  @media (max-width: 1400px) {
+    height: clamp(30vh, 60vh, 65vh);
+  }
 
-    &:hover {
-        background-color: #462c2c;
-    }
+  @media (max-width: 1000px) {
+    height: clamp(25vh, 55vh, 60vh);
+  }
+
+  @media (max-width: 768px) {
+    height: clamp(25vh, 45vh, 50vh);
+  }
+
+  @media (max-width: 480px) {
+    height: clamp(20vh, 35vh, 40vh);
+  }
+
+  @media (max-width: 320px) {
+    height: clamp(15vh, 35vh, 35vh);
+  }
+
+  @media (max-width: 200px) {
+    height: clamp(10vh, 25vh, 25vh);
+  }
+
+  @media (max-width: 130px) {
+    height: clamp(10vh, 20vh, 20vh);
+  }
 }
