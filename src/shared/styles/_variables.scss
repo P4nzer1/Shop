@@ -1,8 +1,20 @@
-$primary-color: #ffffff;
-$secondary-color: #6c757d;
-$font-family: 'Roboto', sans-serif;
+:root {
+    --font-family-main:  "Times New Roman" , Serif;
 
-$spacing-xs: 0.25rem;
-$spacing-sm: 0.5rem;
-$spacing-md: 1rem;
-$spacing-lg: 2rem;
+
+    --font-size-M: 1rem;
+    --font-line-M: 1.5rem;
+    --font-M: var(--font-size-M) / var(--font-line-M) / var(--font-family-main);
+
+    --font-size-L: 2rem;
+    --font-line-L: 2.5rem;
+    --font-L: var(--font-size-L) / var(--font-line-L) / var(--font-family-main);
+
+    --font-size-XL: 3rem;
+    --font-line-XL: 3.5rem;
+    --font-XL: var(--font-size-XL) / var(--font-line-XL) / var(--font-family-main);
+}
+
+
+
+
