@@ -2,17 +2,33 @@
 
 .footer {
   position: static;
-  height: 100vh; // Фиксированная высота для Footer
-  background-image: url('../../assets/image/footer.jpg');
+  min-height: 100vh; // Минимальная высота футера
+  background-image: url('../../assets/image/footer.webp');
   background-size: cover;
-  background-position: center;
+  background-position: center bottom; // Центрируем фон по горизонтали и прижимаем к низу
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: auto;
+  transition: min-height 0.3s ease;
 
-  transition: height 0.3s ease; // Плавный переход для высоты
+  .a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 136, 0);
+    font-size: calc(1rem + (2vw - 0.5rem));
+  }
+  
+  .h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 251, 0);
+    font-size: calc(4rem + (3vw - 1rem));
+  }
 
   @media (max-width: 1400px) {
     height: clamp(30vh, 60vh, 65vh);
@@ -42,3 +58,4 @@
     height: clamp(10vh, 20vh, 20vh);
   }
 }
+

@@ -11,6 +11,7 @@ import Register from '../features/Auth/ui/Register/Register';
 import CartPageLazy from '../pages/CartPage/CartPage';
 import ProfilePageLazy from '../pages/ProfilePage/ProfilePage';
 
+
 export default function App ()  {
   return (
     <Provider store={store}>
