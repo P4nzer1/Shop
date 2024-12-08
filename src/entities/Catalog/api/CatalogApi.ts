@@ -2,8 +2,9 @@ import axios from 'axios';
 
 const BASE_URL = 'http://localhost:5000/products';
 
-export const getProducts = async () => {
-  const response = await axios.get(`${BASE_URL}`);
+export const getProducts = async (brand: string | null) => {
+  const url = brand ? `${BASE_URL}?brand=${brand}` : BASE_URL;
+  const response = await axios.get(url);
   return response.data;
 };
 

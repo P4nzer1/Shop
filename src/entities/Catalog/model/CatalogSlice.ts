@@ -1,29 +1,31 @@
-// src/entities/Catalog/model/catalogSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface Product {
   id: string;
   name: string;
   price: number;
+  brand: string;  
 }
 
 interface CatalogState {
   products: Product[];
   loading: boolean;
   error: string | null;
+  selectedBrand: string | null;  
 }
 
 const initialState: CatalogState = {
   products: [],
   loading: false,
   error: null,
+  selectedBrand: null,  
 };
 
 const catalogSlice = createSlice({
   name: 'catalog',
   initialState,
   reducers: {
-    fetchProductsRequest(state) {
+    fetchProductsRequest(state, action: PayloadAction<string | null>) {
       state.loading = true;
       state.error = null;
     },
@@ -35,9 +37,17 @@ const catalogSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
+    setSelectedBrand(state, action: PayloadAction<string | null>) {
+      state.selectedBrand = action.payload;  
+    },
   },
 });
 
-export const { fetchProductsRequest, fetchProductsSuccess, fetchProductsFailure } = catalogSlice.actions;
+export const {
+  fetchProductsRequest,
+  fetchProductsSuccess,
+  fetchProductsFailure,
+  setSelectedBrand,
+} = catalogSlice.actions;
 
 export default catalogSlice.reducer;

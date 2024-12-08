@@ -24,6 +24,7 @@ export default function App ()  {
             <Route path="/cart" element={<CartPageLazy/>}/>
             <Route path="/profile" element={<ProfilePageLazy/>}/>
             <Route path="/catalog" element={<CatalogPageLazy/>}/>
+            <Route path="/catalog/:brand" element={<CatalogPageLazy/>}/>
             <Route path="/order" element={<OrderPageLazy/>}/>
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />

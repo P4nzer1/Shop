@@ -1,11 +1,13 @@
-// src/entities/Catalog/model/catalogSaga.ts
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { fetchProductsRequest, fetchProductsSuccess, fetchProductsFailure } from './CatalogSlice';
+import { fetchProductsRequest, fetchProductsSuccess, fetchProductsFailure, setSelectedBrand } from './CatalogSlice';
 import { getProducts } from '../api/CatalogApi';
 
-function* fetchCatalogSaga() {
+
+function* fetchCatalogSaga(action: any) {
+  const brand = action.payload; 
+
   try {
-    const products = yield call(getProducts);
+    const products = yield call(getProducts, brand);
     yield put(fetchProductsSuccess(products));
   } catch (error: any) {
     yield put(fetchProductsFailure(error.message));
