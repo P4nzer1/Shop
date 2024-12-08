@@ -10,6 +10,8 @@ import Login from '../features/Auth/ui/Login/Login';
 import Register from '../features/Auth/ui/Register/Register';
 import CartPageLazy from '../pages/CartPage/CartPage';
 import ProfilePageLazy from '../pages/ProfilePage/ProfilePage';
+import CatalogPageLazy from '../pages/CatalogPage/CatalogPage.lazy';
+import OrderPageLazy from '../pages/OrdersPage/OrdersPage.lazy';
 
 
 export default function App ()  {
@@ -21,6 +23,9 @@ export default function App ()  {
             <Route path="/" element={<HomePage/>}/>
             <Route path="/cart" element={<CartPageLazy/>}/>
             <Route path="/profile" element={<ProfilePageLazy/>}/>
+            <Route path="/catalog" element={<CatalogPageLazy/>}/>
+            <Route path="/catalog/:brand" element={<CatalogPageLazy/>}/>
+            <Route path="/order" element={<OrderPageLazy/>}/>
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
           </Routes>

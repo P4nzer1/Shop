@@ -1,3 +1,4 @@
+@import '../../../../../app/styles/global';
 .cartIcon {
     position: relative;
     display: flex;
@@ -6,10 +7,10 @@
 }
   
   .icon {
-    font-size: 24px; 
-    color: #ffffff; 
+    font-size: 2rem; 
+    color: $white-color; 
     &:hover {
-        color: rgb(221, 255, 0);
+        color: $yellow-color;
     }
 }
   
