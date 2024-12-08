@@ -4,13 +4,15 @@ import { RootState } from '../../app/store';
 import { updateProfile } from '../../entities/Profile/model/ProfileSlice';
 
 import ProfileTotal from '../../entities/Profile/ui/ProfileTotal';
+import Header from '../../widgets/Header/Header';
+import Footer from '../../widgets/Footer/Footer';
+import styles from './Profile.module.scss'
 
 const ProfilePage = () => {
   const dispatch = useDispatch();
   const profile = useSelector((state: RootState) => state.profile);
 
   useEffect(() => {
-    // Запрашиваем профиль при загрузке страницы
     dispatch({ type: 'profile/fetch' });
   }, [dispatch]);
 
@@ -25,23 +27,13 @@ const ProfilePage = () => {
   };
 
   return (
-    <div style={{ padding: '2em' }}>
+    <div>
+      <Header/> 
       <h1>Профиль</h1>
       <ProfileTotal />
-      <button
-        style={{
-          marginTop: '2em',
-          padding: '10px 20px',
-          backgroundColor: '#007bff',
-          color: 'white',
-          border: 'none',
-          borderRadius: '4px',
-          cursor: 'pointer',
-        }}
-        onClick={handleUpdate}
-      >
-        Обновить профиль
+      <button className={styles.button} onClick={handleUpdate}>Обновить профиль
       </button>
+      <Footer/>
     </div>
   );
 };

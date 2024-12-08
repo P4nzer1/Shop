@@ -1,6 +1,8 @@
 import { useSelector } from 'react-redux';
 import { CartTotal, CartItem } from '../../entities/Cart/ui';
 import styles from './CartPage.module.scss';
+import Footer from '../../widgets/Footer/Footer';
+import Header from '../../widgets/Header/Header';
 
 interface CartItem {
   id: string;
@@ -22,6 +24,7 @@ const CartPage = () => {
 
   return (
     <div className={styles.cartPage}>
+      <Header/>
       <h1>Ваша корзина</h1>
       {cartItems && cartItems.length > 0 ? (
         <div>
@@ -33,6 +36,7 @@ const CartPage = () => {
       ) : (
         <p>Ваша корзина пуста</p>
       )}
+      <Footer/>
     </div>
   );
 };

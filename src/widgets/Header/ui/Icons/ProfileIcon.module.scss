@@ -1,0 +1,10 @@
+@import '../../../../app/styles/global';
+.icon {
+    font-size: 2rem; 
+    color: #ffffff; 
+
+    &:hover {
+      color: rgb(175, 245, 0);
+  }
+}
+  

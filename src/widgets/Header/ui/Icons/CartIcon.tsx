@@ -1,7 +1,6 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { FaShoppingCart } from 'react-icons/fa'; // React Icons
+import { FaShoppingCart } from 'react-icons/fa'; 
 import styles from './CartIcon.module.scss';
 
 const CartIcon = () => {
