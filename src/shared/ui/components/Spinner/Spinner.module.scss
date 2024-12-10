@@ -1,0 +1,26 @@
+@import '../../../../app/styles/global';
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.loader {
+  border: 0.5rem solid $perpl-color;
+  border-top: 0.5rem solid $yellow-color;
+  border-radius: 60%;
+  width: 3rem;
+  height: 4rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

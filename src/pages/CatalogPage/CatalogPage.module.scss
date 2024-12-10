@@ -1,17 +1,13 @@
-// src/pages/CatalogPage/CatalogPage.module.scss
-
-
-  
-  .catalogItems {
+.catalogItems {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
-  }
+}
   
-  .message {
+.message {
     text-align: center;
     font-size: 18px;
     color: #888;
     margin-top: 20px;
-  }
+}
   

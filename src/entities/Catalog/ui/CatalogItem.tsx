@@ -1,6 +1,4 @@
-// src/entities/Catalog/ui/CatalogItem.tsx
 import React from 'react';
-
 interface CatalogItemProps {
   id: string;
   name: string;

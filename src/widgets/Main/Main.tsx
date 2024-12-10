@@ -1,5 +1,5 @@
-import LineChart from '../../shared/ui/Charts/LineChart';
-import { useData } from '../../shared/utils/hooks/useData';
+import LineChart from '../../shared/ui/components/Charts/LineChart';
+import { useData } from '../../shared/hooks/useData';
 import styles from './Main.module.scss'
 
 const Main = () => {

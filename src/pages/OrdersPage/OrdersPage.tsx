@@ -1,5 +1,5 @@
 import React from 'react';
-import OrderList from '../../features/Orders/ui/OrdersList';
+import OrderList from '../../features/Orders/ui/OrderList/OrdersList';
 import Header from '../../widgets/Header/Header';
 import Footer from '../../widgets/Footer/Footer';
 

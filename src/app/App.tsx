@@ -3,7 +3,7 @@ import store from './store';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import { Spinner } from '../shared/ui/Spinner';
+import { Spinner } from '../shared/ui/components/Spinner';
 
 import HomePage from '../pages/HomePage/HomePage';
 import Login from '../features/Auth/ui/Login/Login';
@@ -24,7 +24,6 @@ export default function App ()  {
             <Route path="/cart" element={<CartPageLazy/>}/>
             <Route path="/profile" element={<ProfilePageLazy/>}/>
             <Route path="/catalog" element={<CatalogPageLazy/>}/>
-            <Route path="/catalog/:brand" element={<CatalogPageLazy/>}/>
             <Route path="/order" element={<OrderPageLazy/>}/>
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
