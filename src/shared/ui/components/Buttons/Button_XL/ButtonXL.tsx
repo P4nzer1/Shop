@@ -1,13 +1,13 @@
 import React from 'react';
-import styles from './ButtonPrimary.module.scss';
+import styles from './ButtonXL.module.scss';
 
-interface ButtonPrimaryProps {
+interface ButtonXLProps {
   label: string;
   onClick: () => void;
   disabled?: boolean;
 }
 
-const ButtonPrimary: React.FC<ButtonPrimaryProps> = ({ label, onClick, disabled }) => {
+const ButtonXL: React.FC<ButtonXLProps> = ({ label, onClick, disabled }) => {
   return (
     <button
       className={styles.button}
@@ -19,4 +19,4 @@ const ButtonPrimary: React.FC<ButtonPrimaryProps> = ({ label, onClick, disabled 
   );
 };
 
-export default ButtonPrimary;
+export default ButtonXL;

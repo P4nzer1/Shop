@@ -15,6 +15,7 @@ import { MOCK_BRANDS } from './mocks';
 import { tryCatchWrapper } from './sagaUtils';
 
 function* fetchBrandsSaga() {
+  console.log('fetchBrandsSaga called');
   // const response = yield call(getBrands);
    // yield put(fetchBrandsSuccess(response.data));
   yield put(fetchBrandsSuccess(MOCK_BRANDS));

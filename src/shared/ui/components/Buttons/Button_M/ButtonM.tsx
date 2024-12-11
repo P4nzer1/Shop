@@ -1,13 +1,13 @@
 import React from 'react';
-import styles from './ButtonIcon.module.scss';
+import styles from './ButtonM.module.scss';
 
-interface ButtonIconProps {
+interface ButtonMProps {
   icon: React.ReactNode; 
   onClick: () => void;
   ariaLabel: string; 
 }
 
-const  ButtonIcon: React.FC<ButtonIconProps> = ({ icon, onClick, ariaLabel }) => {
+const  ButtonM: React.FC<ButtonMProps> = ({ icon, onClick, ariaLabel }) => {
   return (
     <button
       className={styles.buttonIcon}
@@ -19,4 +19,4 @@ const  ButtonIcon: React.FC<ButtonIconProps> = ({ icon, onClick, ariaLabel }) =>
   );
 };
 
-export default ButtonIcon;
+export default ButtonM;

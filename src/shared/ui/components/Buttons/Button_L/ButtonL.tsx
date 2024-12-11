@@ -1,13 +1,13 @@
 import React from 'react';
-import styles from './ButtonSecondary.module.scss';
+import styles from './ButtonL.module.scss';
 
-interface ButtonSecondaryProps {
+interface ButtonLProps {
   label: string;
   onClick: () => void;
   disabled?: boolean;
 }
 
-const ButtonSecondary: React.FC<ButtonSecondaryProps> = ({ label, onClick, disabled }) => {
+const ButtonL: React.FC<ButtonLProps> = ({ label, onClick, disabled }) => {
   return (
     <button
       className={styles.button}
@@ -19,4 +19,4 @@ const ButtonSecondary: React.FC<ButtonSecondaryProps> = ({ label, onClick, disab
   );
 };
 
-export default ButtonSecondary;
+export default ButtonL;

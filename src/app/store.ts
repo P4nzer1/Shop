@@ -8,6 +8,7 @@ import cartReducer from '../entities/Cart/model/cartSlice';
 import profileReducer from '../entities/Profile/model/ProfileSlice';
 import catalogReducer from '../entities/Catalog/model/CatalogSlice';
 import orderReducer from '../features/Orders/model/ordersSlice';
+import filterReducer from '../entities/Filter/model/FilterSlice';
 
 // Импорт саг
 import authSaga from '../features/Auth/model/authSaga';
@@ -26,6 +27,7 @@ const store = configureStore({
     profile: profileReducer,
     catalog: catalogReducer,
     order: orderReducer,
+    filters: filterReducer,
 
   },
   middleware: (getDefaultMiddleware) =>

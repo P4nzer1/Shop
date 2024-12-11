@@ -1,0 +1,27 @@
+@import '../../../../../app/styles/global';
+
+.filter {
+    display: flex;
+    padding: 0.25rem;
+    
+}
+
+.label {
+    font-weight: 600;
+    font-size: 1rem;
+
+}
+
+.select {
+    font-size: 0.75rem;
+    border: 0.12rem solid $perpl-color;
+    border-radius: 0.4rem;
+    margin-left: 0.3rem;
+    background-color: $white-color;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+option {
+    background-color: $perpl-color;
+    color: $white-color;
+}
