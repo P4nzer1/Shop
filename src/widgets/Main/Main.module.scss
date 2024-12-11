@@ -1,7 +1,12 @@
 @import '../../app/styles/global';
 
-.conteiner {
-    flex: 1; // Мейн растягивается на всё доступное пространство
+.content {
+    flex: 1; 
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    
   
   
     // Адаптивность через медиазапросы

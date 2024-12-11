@@ -2,7 +2,7 @@
 
 .header {
     height: 100px;
-    background-color: $black-color;
+    background-color: $perpl-color;
     color: $white-color;
     display: flex;
     align-items: center;
@@ -11,9 +11,6 @@
     margin-bottom: 10rem;
 }
 
-  
-  
-  
   .links {
     flex: 2; /* Ссылки занимают центральную часть */
     display: flex;

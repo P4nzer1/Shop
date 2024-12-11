@@ -34,7 +34,7 @@ const CatalogPage: React.FC = () => {
   return (
     <>
       <Header />
-      <main className={styles.mainContent}>
+      <main className={styles.content}>
         <h1>Каталог</h1>
         <BrandFilter />
         {renderContent()}
