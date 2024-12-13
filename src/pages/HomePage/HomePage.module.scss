@@ -1,4 +1,4 @@
-@import '../../../app/styles/global';
+@import '../../app/styles/global';
 
 .content {
     flex: 1; 
@@ -7,9 +7,6 @@
     justify-content: center;
     flex-direction: column;
     
-  
-  
-    // Адаптивность через медиазапросы
     @media (max-width: 768px) {
       padding: 1.5rem;
     }

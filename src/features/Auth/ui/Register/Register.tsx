@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../../../app/store';
 import { registerRequest } from '../../model/authSlice';
+import styles from './Register.module.scss'
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -17,7 +18,7 @@ const Register = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={styles.form } onSubmit={handleSubmit}>
       <input
         type="text"
         value={name}

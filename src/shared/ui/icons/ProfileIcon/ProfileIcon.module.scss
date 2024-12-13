@@ -1,10 +1,16 @@
-@import '../../../../app/styles/global';
-.icon {
-    font-size: 2rem; 
-    color: #ffffff; 
+@import "../../../../app/styles/global";
 
-    &:hover {
-      color: rgb(175, 245, 0);
+.icon {
+  font-size: 2rem;
+  color: $white-color;
+  &:hover {
+    color: $yellow-color;
   }
 }
-  
+
+.link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

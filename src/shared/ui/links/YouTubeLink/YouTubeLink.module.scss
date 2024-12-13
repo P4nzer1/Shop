@@ -4,6 +4,7 @@
     text-decoration: none;
     color: $black-color;
     font-size: calc(0.5rem + (2vw - 1rem));
+    font-weight: 700;
     
     text-shadow: 5px 5px 5px $perpl-color, 10px 10px 10px $yellow-color, 0 0 15px $orange-color;
     animation: shadowShift 3s infinite alternate;
