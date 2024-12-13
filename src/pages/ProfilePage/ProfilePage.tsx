@@ -1,9 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useCallback } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../app/store";
-import { AuthButton } from "../../shared/ui/components/Buttons";
+import Button from "../../shared/ui/components/Buttons/Button/Button";
 import ProfileTotal from "../../entities/Profile/ui/ProfileTotal";
 import styles from "./Profile.module.scss";
 
@@ -13,8 +12,8 @@ const ProfilePage: React.FC = () => {
     (state: RootState) => state.auth
   );
 
-  const onLogin = useCallback(() => navigate("/login"), [navigate]);
-  const onRegister = useCallback(() => navigate("/register"), [navigate]);
+  const onLogin = () => navigate("/login");
+  const onRegister = () => navigate("/register");
 
   return (
     <div className={styles.content}>
@@ -31,8 +30,8 @@ const ProfilePage: React.FC = () => {
             Пожалуйста, войдите или зарегистрируйтесь, чтобы увидеть профиль.
           </p>
           <div className={styles.buttons}>
-            <AuthButton label="Войти" onClick={onLogin} />
-            <AuthButton label="Зарегистрироваться" onClick={onRegister} />
+            <Button className={styles.button} text="Войти" onClick={onLogin} />
+            <Button className={styles.button} text="Зарегистрироваться" onClick={onRegister} />
           </div>
         </div>
       )}
