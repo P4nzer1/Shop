@@ -1,0 +1,21 @@
+@import '../../../app/styles/global';
+.conteiner {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    margin-left: 3rem;
+    
+}
+.filter {
+    display: flex;
+    justify-content:center;
+    align-items:self-start;
+    flex-direction: column;
+    color: $black-color;
+    background-color: $yellow-color;
+    border: 0.15rem solid $black-color;
+    box-shadow: 0.1rem 0.1rem 0.2rem 0.2rem $grey-color ;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+
+}

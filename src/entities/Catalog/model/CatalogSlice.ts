@@ -1,44 +1,43 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
-interface Product {
-  id: string;
-  name: string;
-  price: number;
-  brand: string;  
-}
-
-interface CatalogState {
-  products: Product[];
-  loading: boolean;
-  error: string | null;
-  selectedBrand: string | null;  
-}
-
-const initialState: CatalogState = {
-  products: [],
-  loading: false,
-  error: null,
-  selectedBrand: null,  
-};
+import { initialState , FetchProductsSuccessAction, FetchBrandsSuccessAction, FailureAction, FetchProductsAction} from './constants';
 
 const catalogSlice = createSlice({
   name: 'catalog',
   initialState,
   reducers: {
-    fetchProductsRequest(state, action: PayloadAction<string | null>) {
+    fetchProductsRequest(state, action: FetchProductsAction) {
       state.loading = true;
       state.error = null;
+      state.selectedBrand = action.payload;
     },
-    fetchProductsSuccess(state, action: PayloadAction<Product[]>) {
+
+    fetchProductsSuccess(state, action: FetchProductsSuccessAction) {
       state.loading = false;
       state.products = action.payload;
     },
-    fetchProductsFailure(state, action: PayloadAction<string>) {
+
+    fetchProductsFailure(state, action: FailureAction) {
       state.loading = false;
       state.error = action.payload;
     },
-    setSelectedBrand(state, action: PayloadAction<string | null>) {
-      state.selectedBrand = action.payload;  
+
+    fetchBrandsRequest(state) {
+      state.loading = true;
+    },
+
+    fetchBrandsSuccess(state, action: FetchBrandsSuccessAction) {
+      state.loading = false;
+      state.brands = action.payload;
+    },
+
+    fetchBrandsFailure(state, action: FailureAction) {
+      state.loading = false;
+      state.error = action.payload;
+    },
+    
+    setSelectedBrand(state, action: FetchProductsAction) {
+      state.selectedBrand = action.payload;
     },
   },
 });
@@ -47,7 +46,11 @@ export const {
   fetchProductsRequest,
   fetchProductsSuccess,
   fetchProductsFailure,
+  fetchBrandsRequest,
+  fetchBrandsSuccess,
+  fetchBrandsFailure,
   setSelectedBrand,
 } = catalogSlice.actions;
 
 export default catalogSlice.reducer;
+

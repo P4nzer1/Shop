@@ -1,0 +1,21 @@
+.content {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  
+  .catalogItems {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+  }
+    
+  .message {
+      text-align: center;
+      font-size: 18px;
+      color: #888;
+      
+  }
+    

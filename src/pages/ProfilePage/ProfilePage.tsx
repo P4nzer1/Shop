@@ -29,10 +29,11 @@ const ProfilePage = () => {
   return (
     <div>
       <Header/> 
-      <h1>Профиль</h1>
-      <ProfileTotal />
-      <button className={styles.button} onClick={handleUpdate}>Обновить профиль
-      </button>
+      <div className={styles.content}>
+        <h1>Профиль</h1>
+        <ProfileTotal />
+        <button className={styles.button} onClick={handleUpdate}>Обновить профиль</button>
+      </div>
       <Footer/>
     </div>
   );

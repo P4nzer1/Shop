@@ -2,7 +2,7 @@ import React from 'react';
 
 import Header from '../../widgets/Header/Header';
 import Footer from '../../widgets/Footer/Footer';
-import Main from '../../widgets/Main/Main';
+import MainHome from '../../widgets/Main/MainHome/MainHome';
 
 const HomePage: React.FC = () => {
   
@@ -10,7 +10,7 @@ const HomePage: React.FC = () => {
   return (
     <>
       <Header/>
-      <Main/>
+      <MainHome/>
       <Footer />
     </>
   );

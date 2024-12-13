@@ -7,7 +7,7 @@ function* fetchProfileSaga() {
     const profile = yield call(getProfile);
     yield put(setProfile(profile)); // Устанавливаем данные профиля в store
   } catch (error) {
-    console.error('Error fetching profile:', error);
+    console.error('Error fetching profile:', error.message);
   }
 }
 

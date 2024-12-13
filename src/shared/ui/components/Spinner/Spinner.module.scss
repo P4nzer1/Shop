@@ -1,0 +1,28 @@
+@import '../../../../app/styles/global';
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  perspective: 1000px; // Добавляем перспективу для 3D-эффекта
+}
+
+.loader {
+  border: 0.4rem solid $perpl-color;
+  border-top: 0.4rem solid $yellow-color;
+  border-radius: 50%;
+  width: 8rem;
+  height: 8rem;
+  animation: spin3D 1s linear infinite;
+  transform-origin: center ; 
+}
+
+@keyframes spin3D {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(360deg) rotateZ(360deg);
+  }
+}

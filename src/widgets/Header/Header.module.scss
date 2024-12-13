@@ -2,26 +2,15 @@
 
 .header {
     height: 100px;
-    background-color: $black-color;
+    background-color: $perpl-color;
     color: $white-color;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Равномерное распределение элементов */
-    padding: 0 20px; /* Отступы слева и справа */
+    justify-content: center; /* Равномерное распределение элементов */
+    padding: 1rem 1rem; /* Отступы слева и справа */
     margin-bottom: 10rem;
 }
 
-  .content {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
- }
-  
-  .home {
-    flex: 1; /* Логотип занимает левую часть */
-  }
-  
   .links {
     flex: 2; /* Ссылки занимают центральную часть */
     display: flex;
@@ -29,7 +18,21 @@
     gap: 20px; /* Расстояние между ссылками */
   }
   
-  .icons {
+  .nav {
+    flex: 1; /* Иконки занимают правую часть */
+    display: flex;
+    justify-content: flex-end; /* Прижимаем иконки к правому краю */
+    gap: 1rem; /* Расстояние между иконками */
+  }
+
+  .brands {
+    flex: 1; /* Иконки занимают правую часть */
+    display: flex;
+    justify-content: flex-end; /* Прижимаем иконки к правому краю */
+    gap: 1rem; /* Расстояние между иконками */
+  }
+
+  .user {
     flex: 1; /* Иконки занимают правую часть */
     display: flex;
     justify-content: flex-end; /* Прижимаем иконки к правому краю */

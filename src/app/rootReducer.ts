@@ -4,6 +4,7 @@ import profileReducer from '../entities/Profile/model/ProfileSlice';
 import authReducer from '../features/Auth/model/authSlice';
 import catalogReducer from '../entities/Catalog/model/CatalogSlice';
 import orderReducer from '../features/Orders/model/ordersSlice';
+import filterReducer from '../entities/Filter/model/FilterSlice';
 
 const rootReducer = combineReducers({
   cart: cartReducer,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   auth: authReducer, 
   catalog: catalogReducer,
   order: orderReducer,
+  filters: filterReducer,
 });
 
 export default rootReducer;

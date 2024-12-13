@@ -1,0 +1,21 @@
+@import '../../../app/styles/global';
+
+.content {
+    flex: 1; 
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    
+  
+  
+    // Адаптивность через медиазапросы
+    @media (max-width: 768px) {
+      padding: 1.5rem;
+    }
+  
+    @media (max-width: 480px) {
+      padding: 1rem;
+    }
+  }
+  

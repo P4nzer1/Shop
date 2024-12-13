@@ -1,16 +1,21 @@
+import AuthorLink from '../../shared/ui/links/AuthorLink/AuthorLink';
+import TelegramLink from '../../shared/ui/links/TelegramLink/TelegramLink';
+import TikTokLink from '../../shared/ui/links/TikTokLink/TikTokLink';
+import VkLink from '../../shared/ui/links/VkLink/VkLink';
+import YouTubeLink from '../../shared/ui/links/YouTubeLink/YouTubeLink';
 import styles from './Footer.module.scss';
 
 const Footer = () => {
   return (
     <div className={styles.footer}>
       <div className={styles.content}>
-        <nav>
-          <a className={styles.a} href="https://t.me/kwls13" target="_blank"  rel="noopener noreferrer">Еблан</a>
-          <a className={styles.a} href="https://t.me/P4NZ3RKAWASAKI" target="_blank"  rel="noopener noreferrer">Кореш Еблана</a>
-          <a className={styles.a} href="https://t.me/P4NZ3RKAWASAKI" target="_blank"  rel="noopener noreferrer">Кореш Еблана</a>
-          <a className={styles.a} href="https://t.me/P4NZ3RKAWASAKI" target="_blank"  rel="noopener noreferrer">Кореш Еблана</a>
+        <nav className={styles.nav}>
+          <TelegramLink />
+          <VkLink />
+          <TikTokLink />
+          <YouTubeLink />
+          <AuthorLink />
         </nav>
-        <h1 className={styles.h1}>Магазин</h1>
       </div>
     </div>
   );
