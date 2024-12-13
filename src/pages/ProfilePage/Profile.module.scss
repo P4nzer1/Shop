@@ -7,17 +7,8 @@
     justify-content: center;
 }
 
-
-.button {
-    margin-top: 2rem;
-    padding: 1rem 1.5rem;
-    background-color: $orange-color;
-    color : $yellow-color;
-    border-radius: 1rem;
-    cursor: pointer;
-    transition: all;
-    &:hover {
-        background-color: $yellow-color;
-        color : $orange-color;
-    }
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

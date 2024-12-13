@@ -1,35 +1,16 @@
-@import '../../../../app/styles/global';
-.cartIcon {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+@import "../../../../app/styles/global";
+
+.icon {
+  font-size: 2rem;
+  color: $white-color;
+  &:hover {
+    color: $yellow-color;
+  }
 }
-  
-  .icon {
-    font-size: 2rem; 
-    color: $white-color; 
-    &:hover {
-        color: $yellow-color;
-    }
+
+.link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-  
-  .count {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: red;
-    color: white;
-    border-radius: 50%;
-    font-size: 12px;
-    width: 18px;
-    height: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-  
-  .link {
-    text-decoration: none; 
-}
-  

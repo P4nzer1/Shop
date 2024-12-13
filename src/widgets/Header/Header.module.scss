@@ -10,10 +10,11 @@
     padding: 1rem 1rem; /* Отступы слева и справа */
     margin-bottom: 10rem;
 }
-
+  
   .links {
     flex: 2; /* Ссылки занимают центральную часть */
     display: flex;
+    align-items: center;
     justify-content: center; /* Центрирование ссылок */
     gap: 20px; /* Расстояние между ссылками */
   }
@@ -21,6 +22,7 @@
   .nav {
     flex: 1; /* Иконки занимают правую часть */
     display: flex;
+    align-items: center;
     justify-content: flex-end; /* Прижимаем иконки к правому краю */
     gap: 1rem; /* Расстояние между иконками */
   }
@@ -35,6 +37,7 @@
   .user {
     flex: 1; /* Иконки занимают правую часть */
     display: flex;
+    align-items: center;
     justify-content: flex-end; /* Прижимаем иконки к правому краю */
     gap: 1rem; /* Расстояние между иконками */
   }

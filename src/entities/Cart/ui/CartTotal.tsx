@@ -15,7 +15,7 @@ const CartTotal = () => {
   );
 
   return (
-    <div style={{ borderTop: '1px solid #ccc', marginTop: '2em', paddingTop: '1em' }}>
+    <div>
       <h3>Итоговая стоимость</h3>
       <p>
         <strong>Количество товаров:</strong> {itemCount}
@@ -23,14 +23,7 @@ const CartTotal = () => {
       <p>
         <strong>Общая сумма:</strong> {total} ₽
       </p>
-      <button style={{
-        padding: '10px 20px',
-        backgroundColor: '#007bff',
-        color: 'white',
-        border: 'none',
-        borderRadius: '4px',
-        cursor: 'pointer',
-      }}>
+      <button>
         Оформить заказ
       </button>
     </div>

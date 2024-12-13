@@ -11,9 +11,7 @@ const OrderList: React.FC = () => {
   const { orders, loading, error } = useSelector((state: RootState) => state.order);
 
   useEffect(() => {
-    console.time('fetchOrdersRequest');
     dispatch(fetchOrdersRequest());
-    console.timeEnd('fetchOrdersRequest');
   }, [dispatch]);
 
   // Заглушка

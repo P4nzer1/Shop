@@ -4,12 +4,14 @@ interface ProfileState {
   name: string;
   email: string;
   phone: string;
+  isLoggedIn: boolean;
 }
 
 const initialState: ProfileState = {
   name: '',
   email: '',
   phone: '',
+  isLoggedIn: false,
 };
 
 const profileSlice = createSlice({

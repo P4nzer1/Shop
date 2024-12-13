@@ -15,8 +15,8 @@ const CartItem = ({ id, name, price, quantity, image }: any) => {
   };
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1em' }}>
-      <img src={image} alt={name} style={{ width: '50px', marginRight: '1em' }} />
+    <div>
+      <img src={image} alt={name} />
       <div>
         <p>{name}</p>
         <p>Цена: {price} ₽</p>

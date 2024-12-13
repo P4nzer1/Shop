@@ -1,5 +1,5 @@
 import { lazy } from "react";
 
-const CatalogPageLazy = lazy(() => import('./CatalogPage'));
+const CatalogPageLazy = lazy(() => import("./CatalogPage"));
 
 export default CatalogPageLazy;
