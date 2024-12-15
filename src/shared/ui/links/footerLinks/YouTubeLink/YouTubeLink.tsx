@@ -1,14 +1,10 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 import style from './YouTubeLink.module.scss'
+import { YouTube } from '../constants';
 
 const YouTubeLink = () => {
-  return (
-    <div>
-      <Link to={'https://www.youtube.com/@-panz3r817'} className={style.text} >Наш YouTube</Link>
-    </div>
-  );
+  return <Link to={YouTube} className={style.text}>Наш YouTube</Link>
 };
 
 export default YouTubeLink;

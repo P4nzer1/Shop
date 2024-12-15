@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { setBrand } from '../../entities/Filter/model/FilterSlice';
+import { setBrand } from '../model/FilterSlice';
 
-import { fetchProductsRequest, fetchBrandsRequest, setSelectedBrand } from '../../entities/Catalog/model/CatalogSlice';
+import { fetchProductsRequest, fetchBrandsRequest, setSelectedBrand } from '../../Catalog/model/CatalogSlice';
 
 export const useCatalog = () => {
   const dispatch = useDispatch();

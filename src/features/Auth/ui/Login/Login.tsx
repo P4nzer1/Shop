@@ -1,39 +1,44 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../../../app/store';
+import { useDispatch } from 'react-redux';
 import { loginRequest } from '../../model/authSlice';
+import Input from '../../../../shared/ui/components/Input/Input';
+import Button from '../../../../shared/ui/components/Buttons/Button/Button';
 
 const Login = () => {
   const dispatch = useDispatch();
-  const { error } = useSelector((state: RootState) => state.auth);
+  const [formData, setFormData] = useState({ email: '', password: '' });
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    dispatch(loginRequest({ email, password })); // Передаётся { email, password }
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
+
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
   
+    !Object.values(formData).every((value) => value.trim())
+      ? alert("Заполните все поля")
+      : dispatch(loginRequest(formData));
+  };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
+    <form onSubmit={onSubmit}>
+      <Input
         type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
+        value={formData.email}
+        onChange={onChange}
+        placeholder="Введите email"
       />
-      <input
+      <Input
         type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Password"
+        value={formData.password}
+        onChange={onChange}
+        placeholder="Введите пароль"
       />
-      <button type="submit">Login</button>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      <Button text="Войти" type='submit' />
     </form>
   );
 };
 
 export default Login;
+

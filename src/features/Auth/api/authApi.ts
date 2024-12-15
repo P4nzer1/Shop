@@ -1,10 +1,9 @@
-import axiosInstance from '../../../shared/api/intercapter/axiosInstance';
-
-const BASE_URL = 'http://localhost:5000/auth';
+import axiosInstance from '../../../shared/api/axiosInstance';
+import { AUTH_URL } from '../../../shared/api/constants';
 
 export const register = async (data: { email: string; password: string; name: string }) => {
   try {
-    const response = await axiosInstance.post(`${BASE_URL}/register`, data);
+    const response = await axiosInstance.post(`${AUTH_URL}/register`, data);
     return response.data;
   } catch (error: any) {
     if (error.response) {
@@ -25,7 +24,7 @@ export const register = async (data: { email: string; password: string; name: st
 
 export const login = async (data: { email: string; password: string }) => {
   try {
-    const response = await axiosInstance.post(`${BASE_URL}/login`, data);
+    const response = await axiosInstance.post(`${AUTH_URL}/login`, data);
     return response.data;
   } catch (error: any) {
     if (error.response) {
@@ -44,7 +43,7 @@ export const login = async (data: { email: string; password: string }) => {
 
 export const refreshToken = async (token: string) => {
   try {
-    const response = await axiosInstance.post(`${BASE_URL}/refresh-token`, { token });
+    const response = await axiosInstance.post(`${AUTH_URL}/refresh-token`, { token });
     return response.data;
   } catch (error: any) {
     if (error.response) {
@@ -63,7 +62,7 @@ export const refreshToken = async (token: string) => {
 
 export const logout = async () => {
   try {
-    const response = await axiosInstance.post(`${BASE_URL}/logout`);
+    const response = await axiosInstance.post(`${AUTH_URL}/logout`);
     return response.data;
   } catch (error: any) {
     if (error.response) {

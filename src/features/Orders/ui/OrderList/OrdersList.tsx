@@ -6,7 +6,7 @@ import OrderDetails from '../OrderDetails/OrdersDetails';
 import { Spinner } from '../../../../shared/ui/components/Spinner';
 import styles from './OrdersList.module.scss'; 
 
-const OrderList: React.FC = () => {
+const OrderList = () => {
   const dispatch = useDispatch();
   const { orders, loading, error } = useSelector((state: RootState) => state.order);
 
@@ -35,7 +35,7 @@ const OrderList: React.FC = () => {
 
   if (loading) return <Spinner/>; 
   //if (error) return <p>Ошибка: {error}</p>;
-  if (ordersToDisplay.length === 0) return <p>У вас нет заказов.</p>;
+  if (!ordersToDisplay.length) return <p>У вас нет заказов.</p>;
 
   return (
     <div className={styles.list}>

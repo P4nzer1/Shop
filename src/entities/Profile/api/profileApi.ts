@@ -1,13 +1,12 @@
 import axios from 'axios';
-
-const BASE_URL = 'http://localhost:5000/profile';
+import { PROFILE_URL } from '../../../shared/api/constants';
 
 export const getProfile = async () => {
-  const response = await axios.get(`${BASE_URL}`);
+  const response = await axios.get(`${PROFILE_URL}`);
   return response.data;
 };
 
 export const updateProfile = async (profileData: any) => {
-  const response = await axios.put(`${BASE_URL}`, profileData);
+  const response = await axios.put(`${PROFILE_URL}`, profileData);
   return response.data;
 };

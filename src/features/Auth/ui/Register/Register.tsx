@@ -1,44 +1,46 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../../../app/store';
+import { useDispatch } from 'react-redux';
 import { registerRequest } from '../../model/authSlice';
 import styles from './Register.module.scss'
+import Input from '../../../../shared/ui/components/Input/Input';
+import Button from '../../../../shared/ui/components/Buttons/Button/Button';
 
 const Register = () => {
   const dispatch = useDispatch();
-  const { error } = useSelector((state: RootState) => state.auth);
+  const [formData, setFormData] = useState({ email: '', password: '', name: '' })
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    dispatch(registerRequest({ name, email, password }));
+
+    !Object.values(formData).every((value) => value.trim())
+      ? alert("Заполните все поля")
+      : dispatch(registerRequest(formData));
   };
 
   return (
-    <form className={styles.form } onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        placeholder="Name"
-      />
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
-      />
-      <input
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Password"
-      />
-      <button type="submit">Register</button>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+    <form className={styles.form} onSubmit={onSubmit}>
+      <Input
+        type='text'
+        value={formData.name}
+        onChange={onChange}
+        placeholder='Введите имя' />
+      <Input
+        type='email'
+        value={formData.email}
+        onChange={onChange}
+        placeholder='Введите email' />
+      <Input
+        type='password'
+        value={formData.password}
+        onChange={onChange}
+        placeholder='Введите пароль' />
+
+      <Button type='submit' text='Зарегистрироваться' />
     </form>
   );
 };

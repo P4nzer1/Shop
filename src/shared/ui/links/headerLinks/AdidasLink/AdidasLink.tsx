@@ -19,5 +19,3 @@ const Adidas = () => {
 };
 
 export default Adidas;
-
-
