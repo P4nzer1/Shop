@@ -1,19 +1,19 @@
 .footer {
   position: static;
-  min-height: 100vh; // Минимальная высота футера
+  min-height: 100vh; 
   background-image: url('../../assets/image/footer.webp');
   background-size: cover;
-  background-position: center bottom; // Центрируем фон по горизонтали и прижимаем к низу
+  background-position: center bottom;
   background-repeat: no-repeat;
   display: flex;
-  flex-direction: column; // Располагаем элементы внутри вертикально
-  align-items: stretch; // Растягиваем элементы по ширине
-  justify-content: flex-start; // Выравниваем элементы по верху
+  flex-direction: column; 
+  align-items: stretch; 
+  justify-content: flex-start; 
   margin-top: 10rem;
   transition: min-height 0.3s ease;
 
   .nav {
-    align-self: flex-start; // Прижимаем .nav к верхнему краю
+    align-self: flex-start; 
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -22,7 +22,7 @@
   }
 
   .content {
-    flex-grow: 1; 
+    flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: center;

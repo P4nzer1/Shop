@@ -1,0 +1,33 @@
+@import '../../../../styles/global';
+
+
+.text {
+    text-decoration: none;
+    color: $black-color;
+    font-size: calc(0.5rem + (2vw - 1rem));
+    font-weight: 700;
+    
+    text-shadow: 5px 5px 5px $perpl-color, 10px 10px 10px $yellow-color, 0 0 15px $orange-color;
+    animation: shadowShift 3s infinite alternate;
+    
+    @keyframes shadowShift {
+        0% {
+          text-shadow: 
+            0 0 0.5rem $yellow-color,
+            0 0 1rem $perpl-color,
+            0 0 3rem $black-color;
+        }
+        50% {
+          text-shadow: 
+            0 0 1rem $orange-color,
+            0 0 2rem $yellow-color,
+            0 0 3rem $black-color;
+        }
+        100% {
+          text-shadow: 
+            0 0 1.5rem $perpl-color,
+            0 0 2.5rem $orange-color,
+            0 0 3rem $black-color;
+        }
+    }
+}

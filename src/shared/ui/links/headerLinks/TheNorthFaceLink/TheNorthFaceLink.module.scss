@@ -1,0 +1,10 @@
+@import '../../../../styles/global';
+
+.icon {
+    color: $white-color;
+    width: 2rem;
+    height: 2rem;
+    &:hover {
+        color: $yellow-color;
+    }
+}

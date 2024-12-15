@@ -1,4 +1,4 @@
-@import '../../app/styles/global';
+@import '../../shared/styles/global';
 
 .content {
     display: flex;
@@ -11,4 +11,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.button {
+    font-family: 'Inter';
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0.2rem;
+    background-color: $grey-color;
+    color: $white-color;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: $black-color;
+    }
 }

@@ -1,4 +1,4 @@
-@import '../../app/styles/global';
+@import '../../shared/styles/global';
 
 .header {
     height: 100px;
@@ -6,39 +6,30 @@
     color: $white-color;
     display: flex;
     align-items: center;
-    justify-content: center; /* Равномерное распределение элементов */
-    padding: 1rem 1rem; /* Отступы слева и справа */
+    justify-content: center; 
+    padding: 1rem 1rem; 
     margin-bottom: 10rem;
 }
-  
-  .links {
-    flex: 2; /* Ссылки занимают центральную часть */
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Центрирование ссылок */
-    gap: 20px; /* Расстояние между ссылками */
-  }
-  
   .nav {
-    flex: 1; /* Иконки занимают правую часть */
+    flex: 1; 
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* Прижимаем иконки к правому краю */
-    gap: 1rem; /* Расстояние между иконками */
+    justify-content: flex-end; 
+    gap: 1rem; 
   }
 
   .brands {
-    flex: 1; /* Иконки занимают правую часть */
+    flex: 1; 
     display: flex;
-    justify-content: flex-end; /* Прижимаем иконки к правому краю */
-    gap: 1rem; /* Расстояние между иконками */
+    justify-content: flex-end; 
+    gap: 1rem; 
   }
 
   .user {
-    flex: 1; /* Иконки занимают правую часть */
+    flex: 1; 
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* Прижимаем иконки к правому краю */
-    gap: 1rem; /* Расстояние между иконками */
+    justify-content: flex-end; 
+    gap: 1rem; 
   }
   

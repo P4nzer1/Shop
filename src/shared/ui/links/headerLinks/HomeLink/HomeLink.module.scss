@@ -1,0 +1,12 @@
+@import '../../../../styles/global';
+
+.h1 {
+    text-decoration: none;
+    color: white;
+    &:hover {
+        color: $yellow-color;
+    }
+    &:active {
+        color: $orange-color;
+    }
+}
