@@ -19,4 +19,4 @@ export const getOrderById = async (id: string) => {
 export const cancelOrder = async (id: string) => {
   const response = await axios.delete(`${ORDERS_URL}/${id}`);
   return response.data;
-};
+}
