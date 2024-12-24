@@ -1,0 +1,36 @@
+@import '../../../styles/global';
+.select {
+  display: flex;
+
+
+
+    &:focus {
+        outline: none;            
+        box-shadow: none;        
+    }
+}
+
+label {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+select {
+  width: 5rem;
+  border: 1px solid $grey-color;;
+  border-radius: 2rem;
+  background-color: $white-color;
+  padding: 0.5rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+
+  &:focus {
+    border-color: $perpl-color; 
+  }
+}
+
+option {
+  font-size: 0.7rem;
+}
+

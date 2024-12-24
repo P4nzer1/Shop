@@ -1,20 +1,20 @@
 import { FilterProps } from "../../../model/constants";
 import Select from "../../../../../shared/ui/components/Select/Select";
-import styles from "./BrandFilter.module.scss";
+import styles from "./CategoryFilter.module.scss";
 
-const BrandFilter = ({ options, selectedOption, onChange }: FilterProps) => {
+const CategoryFilter = ({ options, selectedOption, onChange }: FilterProps) => {
   return (
     <div className={styles.filterItem}>
       <Select
-        id="brand"
+        id="category"
         options={options}
         selectedOption={selectedOption}
         onChange={(e) => onChange(e.target.value)}
-        label="Бренд:"
+        label="Категория:"
         className={styles.select}
       />
     </div>
   );
 };
 
-export default BrandFilter;
+export default CategoryFilter;

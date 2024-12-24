@@ -1,31 +1,49 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../../../../app/store';
-import { setPriceRange } from '../../../model/FilterSlice';
-import { MOCK_PRICE_RANGES } from '../mocks'; 
-import styles from './PriceFilter.module.scss'
+import { useState } from "react";
+import styles from "./PriceFilter.module.scss";
+import { PriceFilterProps } from "../../../model/constants";
+import Input from "../../../../../shared/ui/components/Input/Input";
+import Button from "../../../../../shared/ui/components/Button/Button";
 
-const PriceFilter: React.FC = () => {
-  const dispatch = useDispatch();
-  const priceRange = useSelector((state: RootState) => state.filters.priceRange);
+const PriceFilter = ({ onChange, minLimit, maxLimit }: PriceFilterProps) => {
+  const [localMinPrice, setLocalMinPrice] = useState<string>("");
+  const [localMaxPrice, setLocalMaxPrice] = useState<string>("");
+
+  const handleApply = () => {
+    const min = localMinPrice ? Number(localMinPrice) : minLimit;
+    const max = localMaxPrice ? Number(localMaxPrice) : maxLimit;
+    onChange({ min, max });
+  };
 
   return (
-    <div className={styles.filter}>
-      <label htmlFor="price" className={styles.label} >Цена:</label>
-      <select 
-        id="price"
-        className={styles.select}
-        value={priceRange} 
-        onChange={(e) => dispatch(setPriceRange(e.target.value))}>
-        <option value="">Все цены</option>
-        {MOCK_PRICE_RANGES.map((range) => (
-          <option key={range} value={range}>
-            {range} руб.
-          </option>
-        ))}
-      </select>
+    <div className={styles.filterItem}>
+      <Input
+        id="minPrice"
+        placeholder="От"
+        type="number"
+        value={localMinPrice}
+        min={minLimit}
+        max={localMaxPrice ? Number(localMaxPrice) : maxLimit}
+        onChange={(e) => setLocalMinPrice(e.target.value)}
+        className={styles.input}
+      />
+      <Input
+        id="maxPrice"
+        placeholder="До"
+        type="number"
+        value={localMaxPrice}
+        min={localMinPrice ? Number(localMinPrice) : minLimit}
+        max={maxLimit}
+        onChange={(e) => setLocalMaxPrice(e.target.value)}
+        className={styles.input}
+      />
+      <Button text="Применить" onClick={handleApply} className={styles.button} />
     </div>
   );
 };
 
 export default PriceFilter;
+
+
+
+
+

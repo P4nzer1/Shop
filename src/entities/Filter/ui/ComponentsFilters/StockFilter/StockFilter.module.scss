@@ -1,0 +1,14 @@
+@import "../../../../../shared/styles/global";
+
+.filterItem {
+  @include flex-center;
+}
+
+label {
+  @include flex-center;
+  gap: 0.2rem; 
+}
+
+.checkbox {
+    @include flex-center;
+}

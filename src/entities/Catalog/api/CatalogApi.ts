@@ -16,8 +16,3 @@ export const createProduct = async (productData: any) => {
   const response = await axios.post(`${PRODUCTS_URL}`, productData);
   return response.data;
 };
-// создать на бэке
-export const getBrands = async () => {
-  const response = await axios.get(`${PRODUCTS_URL}/brands`);
-  return response.data;
-};

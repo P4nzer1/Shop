@@ -1,32 +1,60 @@
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { useLocation } from 'react-router-dom';
-import { setBrand } from '../model/FilterSlice';
-
-import { fetchProductsRequest, fetchBrandsRequest, setSelectedBrand } from '../../Catalog/model/CatalogSlice';
+import { useEffect, useState, useMemo } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../../app/store";
+import { fetchProductsRequest } from "../../Catalog/model/CatalogSlice";
+import { Product } from "../../Catalog/model/types";
 
 export const useCatalog = () => {
   const dispatch = useDispatch();
-  const location = useLocation();
+  const { products, loading, error } = useSelector((state: RootState) => state.catalog);
+  const { brand, model, stock, category, priceRange } = useSelector((state: RootState) => state.filters);
+
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
+
 
   useEffect(() => {
-    console.log('Dispatching fetchBrandsRequest');
-    dispatch(fetchBrandsRequest());
-  }, [dispatch]);
-
-  useEffect(() => {
-    const searchParams = new URLSearchParams(location.search);
-    const brand = searchParams.get('brand');
-
-    if (brand) {
-      dispatch(setSelectedBrand(brand));
-      dispatch(fetchProductsRequest(brand));
-      dispatch(setBrand(brand));
-      console.log('Brand from URL:', brand);
-    } else {
-      dispatch(fetchProductsRequest(null));
+    if (!products.length && !loading) {
+      dispatch(fetchProductsRequest());
     }
-  }, [dispatch, location.search]);
+  }, [dispatch, products, loading]);
+
+  useEffect(() => {
+    setFilteredProducts(products);
+  }, [products]);
+
+  const {  brands, categories, models } = useMemo(() => {
+    const uniqueBrands = new Set<string>();
+    const uniqueCategories = new Set<string>();
+    const uniqueModels = new Set<string>();
+  
+    products.forEach((product) => {
+      uniqueBrands.add(product.brand);
+      uniqueCategories.add(product.category);
+      uniqueModels.add(product.model);
+    });
+  
+    return {
+      brands: Array.from(uniqueBrands),
+      categories: Array.from(uniqueCategories),
+      models: Array.from(uniqueModels),
+    };
+  }, [products]);
+
+  return {
+    brands,
+    products,
+    categories, 
+    models,     
+    loading,
+    error,
+    filteredProducts,
+    setFilteredProducts,
+    brand,
+    model,
+    stock,
+    category,
+    priceRange,
+  };
 };
 
 

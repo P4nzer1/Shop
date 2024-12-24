@@ -1,11 +1,12 @@
 export const BASE_URL = 'http://localhost:5000'; 
 
-export const PRODUCTS_URL = 'http://localhost:5000/products'; 
+export const PRODUCTS_URL = 'http://localhost:5000/api/products'; 
 
-export const AUTH_URL = 'http://localhost:5000/auth';
+export const AUTH_URL = 'http://localhost:5000/api/auth';
 
-export const CART_URL = 'http://localhost:5000/cart';
+export const CART_URL = 'http://localhost:5000/api/cart';
 
-export const ORDERS_URL = 'http://localhost:5000/orders';
+export const ORDERS_URL = 'http://localhost:5000/api/orders';
 
-export const PROFILE_URL = 'http://localhost:5000/profile';
+export const PROFILE_URL = 'http://localhost:5000/api/profile';
+
