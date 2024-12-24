@@ -1,31 +1,18 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../../../../app/store';
-import { setModel } from '../../../model/FilterSlice';
-import { MOCK_MODELS } from '../mocks';
-import styles from './ModelFilter.module.scss'
+import { FilterProps } from "../../../model/constants";
+import Select from "../../../../../shared/ui/components/Select/Select";
+import styles from "./ModelFilter.module.scss";
 
-const ModelFilter: React.FC = () => {
-  const dispatch = useDispatch();
-  const model = useSelector((state: RootState) => state.filters.model);
-  
-
+const ModelFilter = ({ options, selectedOption, onChange }: FilterProps) => {
   return (
-    <div className={styles.filter}>
-      <label htmlFor="model" className={styles.label} >Модель:</label>
-      <select 
+    <div className={styles.filterItem}>
+      <Select
         id="model"
+        options={options}
+        selectedOption={selectedOption}
+        onChange={(e) => onChange(e.target.value)}
+        label="Модель:"
         className={styles.select}
-        value={model}  
-        onChange={(e) => dispatch(setModel(e.target.value))}
-      >
-        <option value="">Все модели</option>
-        {MOCK_MODELS.map((model) => (
-          <option key={model} value={model}>
-            {model}
-          </option>
-        ))}
-      </select>
+      />
     </div>
   );
 };

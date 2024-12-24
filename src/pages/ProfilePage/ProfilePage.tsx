@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState } from "../../app/store";
-import Button from "../../shared/ui/components/Buttons/Button/Button";
+import Button from "../../shared/ui/components/Button/Button";
 import ProfileTotal from "../../entities/Profile/ui/ProfileTotal";
 import styles from "./Profile.module.scss";
 

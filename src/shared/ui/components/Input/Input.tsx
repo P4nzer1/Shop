@@ -1,26 +1,19 @@
 import classNames from "classnames";
 import styles from "./Input.module.scss";
+import { InputHTMLAttributes } from "react";
 
-
-interface InputProps {
-    type: string;
-    className?: string;
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    placeholder: string;
-    value: string;
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  className?: string;  
 }
 
-const Input = ({ type, onChange, placeholder, className, value }: InputProps) => {
-    const inputClass = classNames(styles.input, className)
-    return (
-        <input
-            type={type}
-            className={inputClass}
-            placeholder={placeholder}
-            onChange={onChange}
-            value={value}
-        />
-    );
+const Input = ({ className, id, ...props }: InputProps) => {
+  const inputClass = classNames(styles.input, className);
+
+  return (
+    <div className={styles.inputContainer}>
+      <input id={id} className={inputClass} {...props} />
+    </div>
+  );
 };
 
 export default Input;

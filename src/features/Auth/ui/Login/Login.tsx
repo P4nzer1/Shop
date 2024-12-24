@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginRequest } from '../../model/authSlice';
 import Input from '../../../../shared/ui/components/Input/Input';
-import Button from '../../../../shared/ui/components/Buttons/Button/Button';
+import Button from '../../../../shared/ui/components/Button/Button';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -25,12 +25,14 @@ const Login = () => {
     <form onSubmit={onSubmit}>
       <Input
         type="email"
+        name='email'
         value={formData.email}
         onChange={onChange}
         placeholder="Введите email"
       />
       <Input
         type="password"
+        name='password'
         value={formData.password}
         onChange={onChange}
         placeholder="Введите пароль"

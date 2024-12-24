@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { registerRequest } from '../../model/authSlice';
 import styles from './Register.module.scss'
 import Input from '../../../../shared/ui/components/Input/Input';
-import Button from '../../../../shared/ui/components/Buttons/Button/Button';
+import Button from '../../../../shared/ui/components/Button/Button';
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -26,16 +26,19 @@ const Register = () => {
     <form className={styles.form} onSubmit={onSubmit}>
       <Input
         type='text'
+        name='name'
         value={formData.name}
         onChange={onChange}
         placeholder='Введите имя' />
       <Input
         type='email'
+        name='email'
         value={formData.email}
         onChange={onChange}
         placeholder='Введите email' />
       <Input
         type='password'
+        name='password'
         value={formData.password}
         onChange={onChange}
         placeholder='Введите пароль' />

@@ -1,0 +1,35 @@
+@import '../../../shared/styles/global';
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);          
+    padding: 1rem;                         
+  }
+  
+  .heading {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .button {
+    font-family: 'Inter';
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0.2rem;
+    background-color: $grey-color;
+    color: $white-color;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+  
+    &:hover {
+      background-color: $black-color;
+    }
+  }
+  
